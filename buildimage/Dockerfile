@@ -15,6 +15,17 @@ RUN chmod 777 fetch.py
 COPY containermain.py /root/containermain.py
 RUN chmod 777 containermain.py
 
+RUN echo "deb http://mirrors.163.com/ubuntu/ vivid main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/ubuntu/ vivid-security main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/ubuntu/ vivid-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/ubuntu/ vivid-proposed main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/ubuntu/ vivid-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/ubuntu/ vivid main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/ubuntu/ vivid-security main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/ubuntu/ vivid-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/ubuntu/ vivid-proposed main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/ubuntu/ vivid-backports main restricted universe multiverse" >> /etc/apt/sources.list
+
 RUN apt-get update
 RUN apt-get install -qq -y python2.7 python2.7-dev python-pip
 RUN apt-get install git
