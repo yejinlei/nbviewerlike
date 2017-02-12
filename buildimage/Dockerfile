@@ -8,8 +8,6 @@ ENV LANG zh_CN.UTF-8
 ENV LANGAGE zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
 
-RUN cp /etc/apt/sources.list /etc/apt/sources.listbak
-COPY /etc/apt/sources.list /etc/apt/sources.list
 COPY fetch.py /root/fetch.py
 RUN chmod 777 fetch.py
 COPY containermain.py /root/containermain.py
