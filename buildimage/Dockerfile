@@ -27,7 +27,7 @@ RUN true > /etc/apt/sources.list && \
 
 RUN apt-get update
 RUN apt-get install -qq -y python2.7 python2.7-dev python-pip
-RUN apt-get install git
+RUN apt-get install -qq -y git
 
 RUN pip install --upgrade pip
 RUN pip install jupyter
