@@ -10,7 +10,7 @@ def startnotebook(port):
     child = subprocess.Popen(cmd_var, shell=True, universal_newlines=True)
     child.wait()
 
-if __name__ == "__main__";
+if __name__ == "__main__":
     if sys.argv[2] == 'download':
         Fetch().fetch_notebook(sys.argv[3], sys.argv[4])
         startnotebook(sys.argv[1])
