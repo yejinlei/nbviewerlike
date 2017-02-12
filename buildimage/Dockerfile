@@ -15,7 +15,8 @@ RUN chmod 777 fetch.py
 COPY containermain.py /root/containermain.py
 RUN chmod 777 containermain.py
 
-RUN echo "deb http://mirrors.163.com/ubuntu/ vivid main restricted universe multiverse" >> /etc/apt/sources.list && \
+RUN true > /etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/ubuntu/ vivid main restricted universe multiverse" >> /etc/apt/sources.list && \
     echo "deb http://mirrors.163.com/ubuntu/ vivid-security main restricted universe multiverse" >> /etc/apt/sources.list && \
     echo "deb http://mirrors.163.com/ubuntu/ vivid-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
     echo "deb http://mirrors.163.com/ubuntu/ vivid-proposed main restricted universe multiverse" >> /etc/apt/sources.list && \
