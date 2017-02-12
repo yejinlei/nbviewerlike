@@ -9,9 +9,9 @@ ENV LANGAGE zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
 
 COPY fetch.py /root/fetch.py
-RUN chmod 777 fetch.py
+RUN chmod 777 /root/fetch.py
 COPY containermain.py /root/containermain.py
-RUN chmod 777 containermain.py
+RUN chmod 777 /root/containermain.py
 
 RUN true > /etc/apt/sources.list && \
     echo "deb http://mirrors.163.com/ubuntu/ vivid main restricted universe multiverse" >> /etc/apt/sources.list && \
