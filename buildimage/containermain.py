@@ -15,6 +15,7 @@ if __name__ == "__main__":
         Fetch().fetch_notebook(sys.argv[3], sys.argv[4])
         startnotebook(sys.argv[1])
     elif sys.argv[2] == 'create':
+        os.makedirs('/root/tmp')
         startnotebook(sys.argv[1])
     else:
         pass
