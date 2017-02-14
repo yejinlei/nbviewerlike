@@ -2,8 +2,7 @@
 import sys, os, socket, subprocess
 from fetch import *
 
-hostname = socket.getfqdn(socket.gethostname())
-hostaddr = socket.gethostbyname(hostname)
+hostaddr = get_ip_address('eth0')
 
 def startnotebook(port):
     cmd_var = r'jupyter notebook --no-browser /root/tmp --ip={} --port={} --notebook-dir=/root/tmp --NotebookApp.token=""'.format(hostaddr, port)

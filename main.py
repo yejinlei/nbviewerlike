@@ -1,6 +1,7 @@
 #cding:UTF-8
 import subprocess
 import Flask
+from Flask import *
 import requests
 
 port = 8887
@@ -29,6 +30,8 @@ def create():
     child = subprocess.Popen(cmd_var, shell=True, universal_newlines=True)
     child.wait()
 
+@app.route('/')
+def index()
+    return render_template('index.html'), 200
 
-
-
+app.run(host='0.0.0.0', debug=False, port=port)
