@@ -29,6 +29,11 @@ RUN apt-get update
 RUN apt-get install -qq -y python2.7 python2.7-dev python-pip
 RUN apt-get install -qq -y git
 
+RUN mkdir -p /root/.pip && \
+    echo "[global]" > ~/.pip/pip.conf && \
+    echo "trusted-host =  mirrors.aliyun.com" >> ~/.pip/pip.conf && \
+    echo "index-url = http://mirrors.aliyun.com/pypi/simple" >> ~/.pip/pip.conf
+
 RUN pip install --upgrade pip
 RUN pip install jupyter
 

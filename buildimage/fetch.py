@@ -10,7 +10,7 @@ class Fetch(object):
         try:
             os.mkdir(self.workdir)
             os.chdir(self.workdir)
-            child = subprocess.Popen('git clone {} .'.format(name, pro), shell=True, universal_newlines=True)
+            child = subprocess.Popen('git clone {} .'.format(self.url.format(name, pro)), shell=True, universal_newlines=True)
             child.wait()
         except Exception:
             return False
